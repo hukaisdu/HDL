@@ -30,7 +30,17 @@ Use the following command to run the detection algorithms:
 
 ## Higher-Order Algebraic Transitional Form (HATF) : Section 5
 
-[ascon_hatf.py](https://) is for 
+[ascon_hatf.py](https://github.com/hukaisdu/HDL/blob/main/Section5/ascon.py) is the implementation of computing the HATF for Ascon. 
+
+Use 
+
+`sage -python ascon.py` 
+
+to run it. You will get the bias for (0, 7) --> (25) and the corresponding bias. 
+
+[recoverykey.cpp](https://github.com/hukaisdu/HDL/blob/main/Section5/recoverkey.cpp) implementes the algorithm for the key recovery. With $2^{9.94}$ datas, we can judge the right keys with about 9,500 times of success among 10,000 experiments.
+
+
 
 ## Cube Testers
 
