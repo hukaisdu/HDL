@@ -1,7 +1,7 @@
 # HDL -- Higher-Order Differential-Linear Attacks
 Source Code for "Revisiting Higher-Order Differential-Linear Attacks from an Algebraic Perspective"
 
-## HD Distinguishers for Ascon : Section 4
+## HD Distinguishers for Ascon : [Section 4](https://github.com/hukaisdu/HDL/tree/main/Section4)
 
 In this directory, we provide codes for detecting the HD distinguishers for Ascon permutation, initialisation and encryption. 
 
@@ -28,7 +28,7 @@ Use the following command to run the detection algorithms:
 
 	`sage -python encrypt.py`
 
-## Higher-Order Algebraic Transitional Form (HATF) : Section 5
+## Higher-Order Algebraic Transitional Form (HATF) : [Section 5](https://github.com/hukaisdu/HDL/tree/main/Section5)
 
 [ascon_hatf.py](https://github.com/hukaisdu/HDL/blob/main/Section5/ascon.py) is the implementation of computing the HATF for Ascon. 
 
@@ -42,7 +42,9 @@ to run it. You will get the bias for (0, 7) --> (25) and the corresponding bias.
 
 
 
-## Cube Testers
+## Cube Testers : [Section 6](https://github.com/hukaisdu/HDL/tree/main/Section6)
+
+[HDL.cpp](https://github.com/hukaisdu/HDL/blob/main/Section6/HDL.cpp) is used to verify the HDL approxiamtions provided in Table 4. Type `make` to compile it and run it to see the results. 
 
 
 
