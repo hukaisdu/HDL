@@ -3,11 +3,12 @@ Source Code for "Revisiting Higher-Order Differential-Linear Attacks from an Alg
 
 ## Update: the verification codes for the bias on Page 22 from HATF : [Verify](https://github.com/hukaisdu/HDL/tree/main/Verify)
 
-In this directory, we provide four cpp files for verifying the bias for 
-(0, 7)  --> 25: verify_0_7_25.cpp
-(0, 14) --> 51: verify_0_14_51.cpp
-(0, 51) --> 18: verify_0_51_18.cpp
-(0, 57) --> 18: verify_0_57_18.cpp
+In this directory, we provide four cpp files for verifying the bias for :
+
+* (0, 7)  --> 25: verify_0_7_25.cpp
+* (0, 14) --> 51: verify_0_14_51.cpp
+* (0, 51) --> 18: verify_0_51_18.cpp
+* (0, 57) --> 18: verify_0_57_18.cpp
 
 You can use the provided Makefile to compile them. 
 
