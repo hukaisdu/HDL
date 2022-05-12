@@ -16,10 +16,10 @@ def computeTao1( N, e1, alpha1 ):
 
 if __name__ == '__main__':
 
-    e0 = 0
-    e1 = 2**-30
+    e0 = 2**-5.80
+    e1 = 2**-3.16
 
-    alpha0 = computeAlpha0( 7, 0.05 )
+    alpha0 = computeAlpha0( 125, 0.05 )
 
     alpha1 = 0.05
 
@@ -29,6 +29,7 @@ if __name__ == '__main__':
     print ( N, log(N, 2) )
 
     tao = computeTao( N, e0, alpha0 )
+
     tao1 = computeTao1( N, e1, alpha1 )
 
     print ( tao, tao1 )

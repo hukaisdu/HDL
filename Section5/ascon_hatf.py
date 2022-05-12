@@ -1,8 +1,10 @@
 from __future__ import print_function, division
 
 from sage.all import *
-from brial import *
 from ascon import *
+from sage.rings.polynomial.pbori.pbori import *
+from sage.rings.polynomial.pbori import *
+
 import sys
 from forceBias import *
 
@@ -173,10 +175,10 @@ def bias( f ):
 
     F = []
     Separate( f , F)
-    print ( 'Separated', len( F ) )
+    #print ( 'Separated', len( F ) )
 
-    for f in F:
-        print ( f )
+    #for f in F:
+        #print ( f )
 
     e = 0.5
     for index, value in enumerate( F ):
@@ -244,7 +246,11 @@ if __name__  == '__main__':
 
     X = [0] * 320 # whole state
     # set the initial state
+    #IV = 0x80400c0600000000
     IV = 0x80400c0600000000
+    #IV = IV >> 1
+    #IV = 0
+
 
     Q = {} # the substitute dictionary
 
@@ -269,6 +275,8 @@ if __name__  == '__main__':
     # First Round
     X = PA ( X, 0 )
 
+    #print( X[0] )
+
     # substitute
     A = [ R( A0(i) ) for i in range(320) ] 
     B = [ R( B0(i) ) for i in range(320) ] 
@@ -282,22 +290,30 @@ if __name__  == '__main__':
 
     for i in range(320):
         df = X[i] / R ( u * v )
-        if df not in (0, 1 ):
+        if df not in ( 0, 1 ):
             I.add( df )
-            for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
 
+            ID = ideal( list( I ) )
+            for j in range(320):
+                X[j] = X[j].reduce( ID )
+
+    for i in range(320):
         df = X[i] / R ( u )
-        if df not in (0, 1 ):
+        if df not in ( 0, 1 ):
             I.add( df )
-            for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
 
-        df = X[i] / R ( v )
-        if df not in (0, 1 ):
-            I.add( df )
+            ID = ideal( list( I ) )
             for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
+                X[j] = X[j].reduce( ID )
+
+    for i in range(320): 
+        df = X[i] / R ( v )
+        if df not in (0, 1):
+            I.add( df )
+
+            ID = ideal( list( I ) )
+            for j in range(320):
+                X[j] = X[j].reduce( ID )
 
     # substitute
     A = [ R( A1(i) ) for i in range(320) ] 
@@ -312,25 +328,34 @@ if __name__  == '__main__':
 
     for i in range(320):
         df = X[i] / R ( u * v )
-        if df not in (0, 1 ):
+        if df not in ( 0, 1 ):
             I.add( df )
 
+            ID = ideal( list( I ) )
             for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
+                X[j] = X[j].reduce( ID )
 
+
+    for i in range(320):
         df = X[i] / R ( u )
-        if df not in (0, 1 ):
+        if df not in ( 0, 1 ):
             I.add( df )
 
+            ID = ideal( list( I ) )
             for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
+                X[j] = X[j].reduce( ID )
 
+    for i in range(320): 
         df = X[i] / R ( v )
         if df not in (0, 1 ):
             I.add( df )
 
+            ID = ideal( list( I ) )
             for j in range(320):
-                X[j] = X[j].reduce( ideal( list( I ) ) )
+                X[j] = X[j].reduce( ID )
+
+    #for i in range(320):
+    #    print( X[i] / R( u * v ), X[i] / R ( u ), X[i] / R ( v ) )
 
     # substitute
     A = [ R( A2(i) ) for i in range(320) ] 
@@ -376,68 +401,73 @@ if __name__  == '__main__':
 
     X = SboxPN( X )
 
-    f = X[ 25 ] / R ( u * v )
+    for output in range( 64 ):
+        print( output, end = ' ' )
 
-    if f == 0:
-        print ( 0.5 )
+        f = X[ output ] / R ( u * v )
 
-    e = 0.5
+        if f == 0:
+            print ( 0.5 )
 
-    while True:
-        print ( f )
-        fn, fl = isolate( f )
-        print ( "nonlinear part: ",  fn )
+        e = 0.5
 
-        print ( "linear part : ", fl )
+        while True:
+            #print ( f )
+            fn, fl = isolate( f )
+            #print ( "nonlinear part: ",  fn )
 
-        if fn != 0:
-            e = 2 * e * bias ( fn )
+            #print ( "linear part : ", fl )
 
-        print ( "current bias :", e )
+            if fn != 0:
+                e = 2 * e * bias ( fn )
 
-        if e == 0:
-            break
+            #print ( "current bias :", e )
 
-        flag = False # 
-        if fl != 0:
-            f = fl 
-            for val in f.variables():
-                if 'A' in str( val ) or 'B' in str( val ) or 'C' in str( val ) or 'D' in str( val ): # need substitute
-                    f = f.subs( { str(val): Q[ str( val ) ] } ) 
-                    flag = True # do substitution
-
-            if not flag:
-                e = 2 * e * bias ( f )
+            if e == 0:
                 break
+
+            flag = False # 
+            if fl != 0:
+                f = fl 
+                for val in f.variables():
+                    if 'A' in str( val ) or 'B' in str( val ) or 'C' in str( val ) or 'D' in str( val ): # need substitute
+                        f = f.subs( { str(val): Q[ str( val ) ] } ) 
+                        flag = True # do substitution
+
+                if not flag:
+                    e = 2 * e * bias ( f )
+                    break
+            else:
+                break
+
+        print ( 'overall bias: ', end = ' ' )
+        if e == 0:
+            print ( '-inf' )
         else:
-            break
+            print ( math.log( abs( e ), 2 ) )
+            #fout = open( name, 'a' )
+            #print ( index0, index1, index2,  math.log( abs( e ) , 2 ), file = fout )
 
-    print ( 'overall bias: ', end = ' ' )
-    if e == 0:
-        print ( '-inf' )
-    else:
-        print ( math.log( abs( e ), 2 ) )
-        #fout = open( name, 'a' )
-        #print ( index0, index1, index2,  math.log( abs( e ) , 2 ), file = fout )
+        '''
+        II = set()
+        sys.stdout.flush()
 
-    II = set()
-    sys.stdout.flush()
+        for idl in I:
+            print ( idl )
+            xxx = idl.subs( Q )
+            II.add( xxx )
 
-    for idl in I:
-        print ( idl )
-        xxx = idl.subs( Q )
-        II.add( xxx )
+        III = set()
 
-    III = set()
+        for idl in II:
+            print ( idl )
+            xxx = idl.subs( Q )
+            III.add( xxx )
 
-    for idl in II:
-        print ( idl )
-        xxx = idl.subs( Q )
-        III.add( xxx )
-
-    print ( "final" )
-    for idl in III:
-        print ( idl )
+        print ( "final" )
+        for idl in III:
+            print ( idl )
+        '''
 
 
 

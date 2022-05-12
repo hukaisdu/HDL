@@ -14,6 +14,7 @@ all:$(BIN)
 
 $(BIN):%:%.o
 	$(CC) $^ $(OPT) -o $@
+
 $(OBJ):%.o:%.cpp
 	$(CC) -c $(OPT) $^ -o $@
 

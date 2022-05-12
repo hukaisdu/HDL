@@ -1,6 +1,7 @@
 from sage.all import *
-from brial import *
 from random import randint
+from sage.rings.polynomial.pbori.pbori import *
+from sage.rings.polynomial.pbori import *
 
 # total symbolic variables
 
@@ -94,6 +95,7 @@ def Sbox( Y ):
 def addConst ( X, v ):
     constant = [ 0xf0, 0xe1, 0xd2, 0xc3, 0xb4, 0xa5, 0x96, 0x87, 0x78, 0x69,
             0x5a, 0x4b ]
+    #constant = [0] * 12
 
     base = 184
 
