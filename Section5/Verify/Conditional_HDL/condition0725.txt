@@ -1,0 +1,277 @@
+x[0] = x[64];
+x[7] = x[71];
+k[0] = 0;
+k[7] = 0;
+k[64] = 0; 
+k[71] = 0; 
+x[95] = x[28]*k[28] ^ x[28]*k[92] ^ x[28] ^ x[31]*k[31] ^ x[31]*k[95] ^ x[31] ^ x[53]*k[53] ^ x[53]*k[117] ^ x[53] ^ x[92] ^ x[117] ^ k[28]*k[92] ^ k[28] ^ k[31]*k[95] ^ k[31] ^ k[53]*k[117] ^ k[53] ^ k[92] ^ k[95] ^ k[117];
+x[16] = x[19] ^ x[49] ^ x[80] ^ x[83]*k[19] ^ x[83] ^ x[90]*k[26] ^ x[113]*k[49] ^ x[113] ^ k[9] ^ k[16] ^ k[19] ^ k[49] ^ k[73] ^ k[80] ^ k[90];
+x[11] = x[18] ^ x[21] ^ x[51] ^ x[75] ^ x[82] ^ x[85]*k[21] ^ x[85] ^ x[92]*k[28] ^ x[115]*k[51] ^ x[115] ^ k[11] ^ k[18] ^ k[51] ^ k[75] ^ k[82] ^ k[92] ^ 1;
+x[67] = x[3]*k[3] ^ x[3]*k[67] ^ x[3] ^ x[25]*k[25] ^ x[25]*k[89] ^ x[25] ^ x[89] ^ k[3]*k[67] ^ k[3] ^ k[25]*k[89] ^ k[25] ^ k[67] ^ k[89] ^ 1;
+x[74] = x[10]*k[10] ^ x[10]*k[74] ^ x[10] ^ x[32]*k[32] ^ x[32]*k[96] ^ x[32] ^ x[96] ^ k[10]*k[74] ^ k[10] ^ k[32]*k[96] ^ k[32] ^ k[74] ^ k[96];
+x[2] =  x[12] ^ x[42] ^ x[66] ^ x[76]*k[12] ^ x[76] ^ x[83]*k[19] ^ x[106]*k[42] ^ x[106] ^ k[2] ^ k[9] ^ k[12] ^ k[42] ^ k[66] ^ k[73] ^ k[83];
+x[93] = x[26]*k[26] ^ x[26]*k[90] ^ x[26] ^ x[29]*k[29] ^ x[29]*k[93] ^ x[29] ^ x[51]*k[51] ^ x[51]*k[115] ^ x[51] ^ x[90] ^ x[115] ^ k[26]*k[90] ^ k[26] ^ k[29]*k[93] ^ k[29] ^ k[51]*k[115] ^ k[51] ^ k[90] ^ k[93] ^ k[115] ^ 1;
+x[102] = x[35]*k[35] ^ x[35]*k[99] ^ x[35] ^ x[38]*k[38] ^ x[38]*k[102] ^ x[38] ^ x[60]*k[60] ^ x[60]*k[124] ^ x[60] ^ x[99] ^ x[124] ^ k[35]*k[99] ^ k[35] ^ k[38]*k[102] ^ k[38] ^ k[60]*k[124] ^ k[60] ^ k[99] ^ k[102] ^ k[124];
+x[58] =  x[18] ^ x[25] ^ x[28] ^ x[82] ^ x[89] ^ x[92]*k[28] ^ x[92] ^ x[99]*k[35] ^ x[122]*k[58] ^ x[122] ^ k[18] ^ k[25] ^ k[28] ^ k[58] ^ k[82] ^ k[89] ^ k[99] ^ 1;
+x[23] =  x[47] ^ x[54] ^ x[57] ^ x[87]*k[23] ^ x[87] ^ x[111] ^ x[118] ^ x[121]*k[57] ^ x[121] ^ k[23] ^ k[47] ^ k[54] ^ k[57] ^ k[111] ^ k[118];
+x[30] =  x[54] ^ x[61] ^ x[94]*k[30] ^ x[94] ^ x[118] ^ x[125] ^ k[54] ^ k[61] ^ k[118] ^ k[125] ^ 1;
+x[86] =  x[19]*k[19] ^ x[19]*k[83] ^ x[19] ^ x[22]*k[22] ^ x[22]*k[86] ^ x[22] ^ x[44]*k[44] ^ x[44]*k[108] ^ x[44] ^ x[83] ^ x[108] ^ k[19]*k[83] ^ k[19] ^ k[22]*k[86] ^ k[22] ^ k[44]*k[108] ^ k[44] ^ k[83] ^ k[86] ^ k[108];
+\begin{autobreak}
+u_{0}=
+u_{64}
+\end{autobreak} \\
+\begin{autobreak}
+u_{7}=
+u_{71}
+\end{autobreak} \\
+\begin{autobreak}
+k_{0}=
+0
+\end{autobreak} \\
+\begin{autobreak}
+k_{7}=
+0
+\end{autobreak} \\
+\begin{autobreak}
+k_{64}=
+0
+\end{autobreak} \\
+\begin{autobreak}
+k_{71}=
+0
+\end{autobreak} \\
+\begin{autobreak}
+u_{95}=
+u_{28}k_{28}
+\oplus u_{28}k_{92}
+\oplus u_{28}
+\oplus u_{31}k_{31}
+\oplus u_{31}k_{95}
+\oplus u_{31}
+\oplus u_{53}k_{53}
+\oplus u_{53}k_{117}
+\oplus u_{53}
+\oplus u_{92}
+\oplus u_{117}
+\oplus k_{28}k_{92}
+\oplus k_{28}
+\oplus k_{31}k_{95}
+\oplus k_{31}
+\oplus k_{53}k_{117}
+\oplus k_{53}
+\oplus k_{92}
+\oplus k_{95}
+\oplus k_{117}
+\end{autobreak} \\
+\begin{autobreak}
+u_{16}=
+u_{19}
+\oplus u_{49}
+\oplus u_{80}
+\oplus u_{83}k_{19}
+\oplus u_{83}
+\oplus u_{90}k_{26}
+\oplus u_{113}k_{49}
+\oplus u_{113}
+\oplus k_{9}
+\oplus k_{16}
+\oplus k_{19}
+\oplus k_{49}
+\oplus k_{73}
+\oplus k_{80}
+\oplus k_{90}
+\end{autobreak} \\
+\begin{autobreak}
+u_{11}=
+u_{18}
+\oplus u_{21}
+\oplus u_{51}
+\oplus u_{75}
+\oplus u_{82}
+\oplus u_{85}k_{21}
+\oplus u_{85}
+\oplus u_{92}k_{28}
+\oplus u_{115}k_{51}
+\oplus u_{115}
+\oplus k_{11}
+\oplus k_{18}
+\oplus k_{51}
+\oplus k_{75}
+\oplus k_{82}
+\oplus k_{92}
+\oplus 1
+\end{autobreak} \\
+\begin{autobreak}
+u_{67}=
+u_{3}k_{3}
+\oplus u_{3}k_{67}
+\oplus u_{3}
+\oplus u_{25}k_{25}
+\oplus u_{25}k_{89}
+\oplus u_{25}
+\oplus u_{89}
+\oplus k_{3}k_{67}
+\oplus k_{3}
+\oplus k_{25}k_{89}
+\oplus k_{25}
+\oplus k_{67}
+\oplus k_{89}
+\oplus 1
+\end{autobreak} \\
+\begin{autobreak}
+u_{74}=
+u_{10}k_{10}
+\oplus u_{10}k_{74}
+\oplus u_{10}
+\oplus u_{32}k_{32}
+\oplus u_{32}k_{96}
+\oplus u_{32}
+\oplus u_{96}
+\oplus k_{10}k_{74}
+\oplus k_{10}
+\oplus k_{32}k_{96}
+\oplus k_{32}
+\oplus k_{74}
+\oplus k_{96}
+\end{autobreak} \\
+\begin{autobreak}
+u_{2}=
+u_{12}
+\oplus u_{42}
+\oplus u_{66}
+\oplus u_{76}k_{12}
+\oplus u_{76}
+\oplus u_{83}k_{19}
+\oplus u_{106}k_{42}
+\oplus u_{106}
+\oplus k_{2}
+\oplus k_{9}
+\oplus k_{12}
+\oplus k_{42}
+\oplus k_{66}
+\oplus k_{73}
+\oplus k_{83}
+\end{autobreak} \\
+\begin{autobreak}
+u_{93}=
+u_{26}k_{26}
+\oplus u_{26}k_{90}
+\oplus u_{26}
+\oplus u_{29}k_{29}
+\oplus u_{29}k_{93}
+\oplus u_{29}
+\oplus u_{51}k_{51}
+\oplus u_{51}k_{115}
+\oplus u_{51}
+\oplus u_{90}
+\oplus u_{115}
+\oplus k_{26}k_{90}
+\oplus k_{26}
+\oplus k_{29}k_{93}
+\oplus k_{29}
+\oplus k_{51}k_{115}
+\oplus k_{51}
+\oplus k_{90}
+\oplus k_{93}
+\oplus k_{115}
+\oplus 1
+\end{autobreak} \\
+\begin{autobreak}
+u_{102}=
+u_{35}k_{35}
+\oplus u_{35}k_{99}
+\oplus u_{35}
+\oplus u_{38}k_{38}
+\oplus u_{38}k_{102}
+\oplus u_{38}
+\oplus u_{60}k_{60}
+\oplus u_{60}k_{124}
+\oplus u_{60}
+\oplus u_{99}
+\oplus u_{124}
+\oplus k_{35}k_{99}
+\oplus k_{35}
+\oplus k_{38}k_{102}
+\oplus k_{38}
+\oplus k_{60}k_{124}
+\oplus k_{60}
+\oplus k_{99}
+\oplus k_{102}
+\oplus k_{124}
+\end{autobreak} \\
+\begin{autobreak}
+u_{58}=
+u_{18}
+\oplus u_{25}
+\oplus u_{28}
+\oplus u_{82}
+\oplus u_{89}
+\oplus u_{92}k_{28}
+\oplus u_{92}
+\oplus u_{99}k_{35}
+\oplus u_{122}k_{58}
+\oplus u_{122}
+\oplus k_{18}
+\oplus k_{25}
+\oplus k_{28}
+\oplus k_{58}
+\oplus k_{82}
+\oplus k_{89}
+\oplus k_{99}
+\oplus 1
+\end{autobreak} \\
+\begin{autobreak}
+u_{23}=
+u_{47}
+\oplus u_{54}
+\oplus u_{57}
+\oplus u_{87}k_{23}
+\oplus u_{87}
+\oplus u_{111}
+\oplus u_{118}
+\oplus u_{121}k_{57}
+\oplus u_{121}
+\oplus k_{23}
+\oplus k_{47}
+\oplus k_{54}
+\oplus k_{57}
+\oplus k_{111}
+\oplus k_{118}
+\end{autobreak} \\
+\begin{autobreak}
+u_{30}=
+u_{54}
+\oplus u_{61}
+\oplus u_{94}k_{30}
+\oplus u_{94}
+\oplus u_{118}
+\oplus u_{125}
+\oplus k_{54}
+\oplus k_{61}
+\oplus k_{118}
+\oplus k_{125}
+\oplus 1
+\end{autobreak} \\
+\begin{autobreak}
+u_{86}=
+u_{19}k_{19}
+\oplus u_{19}k_{83}
+\oplus u_{19}
+\oplus u_{22}k_{22}
+\oplus u_{22}k_{86}
+\oplus u_{22}
+\oplus u_{44}k_{44}
+\oplus u_{44}k_{108}
+\oplus u_{44}
+\oplus u_{83}
+\oplus u_{108}
+\oplus k_{19}k_{83}
+\oplus k_{19}
+\oplus k_{22}k_{86}
+\oplus k_{22}
+\oplus k_{44}k_{108}
+\oplus k_{44}
+\oplus k_{83}
+\oplus k_{86}
+\oplus k_{108}
+\end{autobreak} \\

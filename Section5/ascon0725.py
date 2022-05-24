@@ -247,9 +247,9 @@ if __name__  == '__main__':
     X = [0] * 320 # whole state
     # set the initial state
     #IV = 0x80400c0600000000
-    #IV = 0x80400c0600000000
+    IV = 0x80400c0600000000
     #IV = IV >> 1
-    IV = 0
+    #IV = 0
 
 
     Q = {} # the substitute dictionary
@@ -262,7 +262,6 @@ if __name__  == '__main__':
 
     for i in range(128):
         X[192 + i] = R( x(i) )
-
 
     X[192 + 0 ] += R( u )
     X[256 + 0 ] += R( u )
@@ -354,6 +353,8 @@ if __name__  == '__main__':
             for j in range(320):
                 X[j] = X[j].reduce( ID )
 
+    #print( ideal( list( I ) ) )
+
     #for i in range(320):
     #    print( X[i] / R( u * v ), X[i] / R ( u ), X[i] / R ( v ) )
 
@@ -405,8 +406,6 @@ if __name__  == '__main__':
 
     print ( f )
 
-    exit(0)
-
     if f == 0:
         print ( 0.5 )
 
@@ -452,15 +451,17 @@ if __name__  == '__main__':
     II = set()
     sys.stdout.flush()
 
+    #I = list ( ideal ( list ( I ) ) )
+
     for idl in I:
-        print ( idl )
+        #print ( idl )
         xxx = idl.subs( Q )
         II.add( xxx )
 
     III = set()
 
     for idl in II:
-        print ( idl )
+        #print ( idl )
         xxx = idl.subs( Q )
         III.add( xxx )
 
