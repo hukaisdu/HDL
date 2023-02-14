@@ -10,6 +10,8 @@ Tools to compute the biases of HDL approximations for Ascon, Xoodyak and Xoodoo.
 
 -- boost: We use the split function of boost, if you do not want to install boost, you can implement split function in split.cpp. Note that your own split function MUSE be thread-safe. 
 
+## Usage
+
 We provide two kinds of tools. The first is a general one in main.cpp that allows you specify the cipher, round, order and differences. To use this tool:
 
 ```
@@ -63,6 +65,7 @@ DSF is a tool for detecting the HD distinguishers for Ascon permutation, initial
 --SageMath
 
 [SageMath](https://www.sagemath.org) is used for implementing some detection algorithms about symbolic computations. So you need to install [SageMath](https://www.sagemath.org) first. 
+## Usage
 
 Use the following command to run the detection algorithms:
 
