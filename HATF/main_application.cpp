@@ -290,8 +290,8 @@ int main( int argc, char * argv[] )
             {
                 for ( int j = 0; j < 4; j++ )
                 {
-                    //cout << 4 * i + j << "\t" << fixed << setprecision( max_precision ) << res5r[ 4 * i + j ] << "\t";
-                    cout << 4 * i + j << "\t" << res5r[ 4 * i + j ] << "\t";
+                    cout << 4 * i + j << "\t" << fixed << setprecision( max_precision ) << res5r[ 4 * i + j ] << "\t";
+                    //cout << 4 * i + j << "\t" << res5r[ 4 * i + j ] << "\t";
                 }
                 cout << endl;
             }
