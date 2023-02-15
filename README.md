@@ -71,21 +71,30 @@ Use the following command to run the detection algorithms:
 
 * Detect the HD distinguishers for the Ascon permutation
 
-	`sage -python permutation.py`
+```
+$ sage -python permutation.py
+```
 
-	The current setting is for 8 rounds, change the code in Line 92 for other rounds.
+The current setting is for 8 rounds, change the code in Line 92 for other rounds.
 
 * Detect the HD distinguishers for the Ascon initialization
 
-	`sage -python initialization.py`
+```
+$ sage -python initialization.py
+```
+
 
 * Detect the 2nd order DL distinguishers for the Ascon initialization
 
-	`sage -python initialization_2nd.py`
+```
+$ sage -python initialization_2nd.py
+```
 
 * Detect the 2nd order DL distinguishers for the Ascon initialization
 
-	`sage -python encrypt.py`
+```
+$ sage -python encrypt.py
+```
 
 
 
