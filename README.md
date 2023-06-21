@@ -8,7 +8,7 @@ Tools to compute the biases of HDL approximations for Ascon, Xoodyak and Xoodoo.
 
 ## Dependencies
 
--- boost: We use the split function of boost, if you do not want to install boost, you can implement split function in split.cpp. Note that your own split function MUSE be thread-safe. 
+-- boost: We use the split function of boost, if you do not want to install boost, you can implement split function in split.cpp. Note that your own split function MUST be thread-safe. 
 
 ## Usage
 
