@@ -90,7 +90,7 @@ $ sage -python initialization.py
 $ sage -python initialization_2nd.py
 ```
 
-* Detect the 2nd order DL distinguishers for the Ascon initialization
+* Detect the 2nd order DL distinguishers for the Ascon encryption
 
 ```
 $ sage -python encrypt.py
